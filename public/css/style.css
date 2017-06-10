@@ -1,0 +1,51 @@
+fieldset {
+	margin: 1em;
+	padding: 2em;
+	background: rgba(255, 255, 255, 0.5);
+	color: #000;
+	border-radius: 3px;
+    max-width: 20em;
+    margin: 0 auto;
+}
+
+.form-1 input, textarea {
+	display: block;
+	margin-bottom: 1em;
+	padding: .50em;
+	width: 15em;
+}
+
+.form-1 textarea {
+	height: 5em;
+}
+
+.form-1 label {
+	font-size: .85em;
+}
+
+button {
+	text-align: center;
+	background-color: #293C54;
+	width: 20em;
+	padding: 2em 0;
+	margin: 1em auto;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	border: solid 1px #1E441E;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+button:hover, button:focus {
+	border: solid 1px #293C54;
+	background: none;
+	-webkit-transition-duration: 0.2s;
+	-moz-transition-duration: 0.2s;
+	-o-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+    color: #293C54;
+}
