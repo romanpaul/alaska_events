@@ -1,0 +1,12 @@
+<ul class="events">
+  <% for(var i=0; i<events.length; i++) {%>
+    <li class="events">
+      <span class="testing"><%= events[i].event_title %></span>
+      <span class="testing"><%= events[i].time_date %></span>
+      <span class="testing"><%= events[i].event_price %></span>
+      <span class="testing"><%= events[i].event_capacity %></span>
+      <button id="update">Edit</button>
+      <button id="delete">X</button>
+    </li>
+  <% } %>
+</ul>

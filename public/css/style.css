@@ -1,3 +1,17 @@
+ul {
+	list-style: none;
+}
+
+li {
+	padding: 1em 1em;
+	display: flex;
+}
+
+.testing {
+	flex-wrap: wrap;
+	padding: 0 .5em;
+}
+
 fieldset {
 	margin: 1em;
 	padding: 2em;
@@ -23,7 +37,7 @@ fieldset {
 	font-size: .85em;
 }
 
-button {
+form button {
 	text-align: center;
 	background-color: #293C54;
 	width: 20em;
