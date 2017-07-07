@@ -2,17 +2,18 @@ const express = require('express');
 const router = express.Router();
 const Event = require('../models/event')
 
-router.get('/'), function(req, res, next){
-    Event.find().toArray((err, result)) ;{
-        if (err) return console.log(err)
-    }
-    
-    res.render('index.ejs', {"events": result});
- };
+
+router.get('/', function(req, res){
+   Event.find({}).then(function(events){
+       res.send(events);
+   });
+     res.render('index');
+ });
 
 router.post('/events', (req, res) => {
-    Event.create(req.body);
-    res.send({type: POST})
+    Event.create(req.body).then(function(ninja){
+        res.send(event);
+    });
 });
 
 
