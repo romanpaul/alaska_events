@@ -11,7 +11,7 @@ router.get('/', function(req, res){
  });
 
 router.post('/events', (req, res) => {
-    Event.create(req.body).then(function(ninja){
+    Event.create(req.body).then(function(events){
         res.send(event);
     });
 });
