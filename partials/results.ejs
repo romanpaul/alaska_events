@@ -1,12 +1,11 @@
-const Event = require('../src/models/event');
-
 <ul class="events">
-  <% for(var i=0; i<Event.length; i++) {%>
+  <% for(var i=0; i<events.length; i++) {%>
     <li class="events">
-      <span class="testing"><%= event[i].event_title %></span>
-      <span class="testing"><%= event[i].time_date %></span>
-      <span class="testing"><%= event[i].event_price %></span>
-      <span class="testing"><%= event[i].event_capacity %></span>
+      <span class="testing"><%= events[i].title %></span>
+      <span class="testing"><%= events[i].date %></span>
+      <span class="testing"><%= events[i].time %></span>
+      <span class="testing"><%= events[i].price %></span>
+      <span class="testing"><%= events[i].capacity %></span>
       <button id="update">Edit</button>
       <button id="delete">X</button>
     </li>

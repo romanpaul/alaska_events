@@ -3,17 +3,28 @@ const router = express.Router();
 const Event = require('../models/event')
 
 
-router.get('/', function(req, res){
+router.get('/', (req, res) => {
    Event.find({}).then(function(events){
-       res.send(events);
-   });
-     res.render('index');
+       console.log(events);
+       res.render('index', {events});
+   })
+    .catch(err => {
+        res.send(err.message)
+    })
  });
 
-router.post('/events', (req, res) => {
-    Event.create(req.body).then(function(events){
-        res.send(events);
-    });
+router.post('/', (req, res) => {
+    console.log(req.body)
+    Event.create(req.body)
+        .then(function(events){
+            res.send(events)
+        })
+        res.redirect('/')
+        .catch(err => {
+            console.log("Everything is broken always", err.message);
+            console.log(err.stack);
+            res.send(err.message);
+        })
 });
 
 

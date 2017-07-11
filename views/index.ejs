@@ -15,7 +15,7 @@
 
 <body>
 
-<form action="/events" method="POST">
+<form action="/" method="POST">
     <fieldset>
         <legend>New Event</legend>
 
@@ -36,16 +36,29 @@
                 <label for="price">Price</label>
                 <input type="text" id="price" name="price" placeholder="ex. $150">
             </div>
-            <div>
+            <div></div>
                 <label for="capacity">Capacity</label>
                 <input type="text" id="capacity" name="capacity" placeholder="ex. 12">
             </div>
         </div>
-        <button type="submit">Create Event</button>
+        <button type="submit" onClick="window.location.reload()">Create Event</button>
 
     </fieldset>
 </form>
 
+<ul class="events">
+  <% for(var i=0; i<events.length; i++) {%>
+    <li class="events">
+      <span class="testing"><%= events[i].title %></span>
+      <span class="testing"><%= events[i].date %></span>
+      <span class="testing"><%= events[i].time %></span>
+      <span class="testing"><%= events[i].price %></span>
+      <span class="testing"><%= events[i].capacity %></span>
+      <button id="update">Edit</button>
+      <button id="delete">X</button>
+    </li>
+  <% } %>
+</ul>
 
 <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
