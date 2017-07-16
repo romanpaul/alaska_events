@@ -1,3 +1,12 @@
+html {
+	background-color: #EAF2EF;
+}
+
+span {
+	font-family: 'Libre Franklin', serif;
+}
+
+
 ul {
 	list-style: none;
 }
@@ -19,7 +28,8 @@ fieldset {
 	color: #000;
 	border-radius: 3px;
     max-width: 20em;
-    margin: 0 auto;
+	margin: 0 auto;
+	font-family: 'Libre Franklin', serif;
 }
 
 .form-1 input, textarea {
@@ -54,7 +64,7 @@ form button {
     color: #fff;
 }
 
-button:hover, button:focus {
+form button:hover, button:focus {
 	border: solid 1px #293C54;
 	background: none;
 	-webkit-transition-duration: 0.2s;
@@ -62,4 +72,16 @@ button:hover, button:focus {
 	-o-transition-duration: 0.2s;
 	transition-duration: 0.2s;
     color: #293C54;
+}
+
+button {
+	margin-right: 10px;
+	background-color: #293C54;
+	color: #fff;
+	border-radius: 4px;
+	border: solid 1px #1E441E;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.5);
 }
