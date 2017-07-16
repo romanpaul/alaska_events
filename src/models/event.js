@@ -6,7 +6,7 @@ const EventSchema = new Schema({
   title: String,
   time: String,
   date: String,
-  price: Number,
+  price: String,
   capacity: Number,
 });
 

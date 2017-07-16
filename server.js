@@ -11,6 +11,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static('public'));
 app.use(routes);
+app.use(function(err, req, res, next) {
+    res.status(500).send({error: err.message});
+});
 
 
 mongoose.connect('mongodb://admin:admin@ds141242.mlab.com:41242/alaska-events');
