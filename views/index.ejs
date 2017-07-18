@@ -51,7 +51,7 @@
   <% for(var i=0; i<events.length; i++) {%>
     <li class="events">
         <span>Event:</span>
-        <span class="testing"><%= events[i].title %></span>
+        <span id="garbage" class="testing"><%= events[i].title %></span>
         <span>Date:</span>
         <span class="testing"><%= events[i].date %></span>
         <span>Time:</span>
@@ -60,8 +60,9 @@
         <span class="testing"><%= events[i].price %></span>
         <span>Capacity:</span>
         <span class="testing"><%= events[i].capacity %></span>
-        <button id="update" onClick="editEventClick('<%=events.id%>')">Edit</button>
-        <button id="delete" onClick="deleteEventClick('<%=events.id%>')">X</button>
+        <button id="update">Edit</button>
+        <button id="save" onClick="editEventClick('<%=events[i].id%>')">Save</button>
+        <button id="delete" onClick="deleteEventClick('<%=events[i].id%>')">X</button>
     </li>
   <% } %>
 </ul>

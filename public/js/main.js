@@ -1,3 +1,15 @@
+$('#update').click(function(){
+  $(this).hide();
+  $('.testing').attr('contenteditable', 'true'); 
+  $('#save').show();
+});
+
+$('.save').click(function(){
+  $(this).hide();
+  $('.text').removeAttr('contenteditable');
+  $('.edit').show();
+});
+
 function deleteEventClick(id) {
   if (confirm("Are you sure?")) {
     $.ajax({
@@ -8,5 +20,9 @@ function deleteEventClick(id) {
 }
 
 function editEventClick(id) {
-  console.log("I will edit for you!", id)
+  $.ajax({
+    type: 'PUT',
+    url: '/events/',
+  })
+  console.log("Edit function", id)
 }
