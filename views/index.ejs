@@ -50,21 +50,23 @@
 <ul class="events">
   <% for(var i=0; i<events.length; i++) {%>
     <li class="events">
-      <span class="testing"><%= events[i].title %></span>
-      <span class="testing"><%= events[i].date %></span>
-      <span class="testing"><%= events[i].time %></span>
-      <span class="testing"><%= events[i].price %></span>
-      <span class="testing"><%= events[i].capacity %></span>
-      <button id="update">Edit</button>
-      <button id="delete">X</button>
+        <span>Event:</span>
+        <span class="testing"><%= events[i].title %></span>
+        <span>Date:</span>
+        <span class="testing"><%= events[i].date %></span>
+        <span>Time:</span>
+        <span class="testing"><%= events[i].time %></span>
+        <span>Price:</span>
+        <span class="testing"><%= events[i].price %></span>
+        <span>Capacity:</span>
+        <span class="testing"><%= events[i].capacity %></span>
+        <button id="update" onClick="editEventClick('<%=events.id%>')">Edit</button>
+        <button id="delete" onClick="deleteEventClick('<%=events.id%>')">X</button>
     </li>
   <% } %>
 </ul>
 
-<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-<script type="text/javascript" src="main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
 </body>
 </html>

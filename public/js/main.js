@@ -1,8 +1,12 @@
-const update = document.getElementById('update')
-
-update.addEventListener('click', function () {
-    fetch('events', {
-        method: 'put',
-        body: FormData
+function deleteEventClick(id) {
+  if (confirm("Are you sure?")) {
+    $.ajax({
+      type: 'DELETE',
+      url: '/events/' + id,
     })
-})
+  }
+}
+
+function editEventClick(id) {
+  console.log("I will edit for you!", id)
+}
