@@ -6,13 +6,9 @@ $('.update').click(function(){
   $(this).hide();
 //the save button becomes visible
   $(this).parent().find('.save').show();
-//.input becomes active for css styling
+//.input is added for css styling
   $(this).parent().find('.properties').addClass('input');
 });
-
-/* $('.update').click(function(){
-  $('.properties').addClass('input');
-}); */
 
 //when save is clicked
 $('.save').click(function(){
@@ -20,9 +16,10 @@ $('.save').click(function(){
   $(this).hide();
 //content becomes static
   $('.properties').removeAttr('contenteditable');
+//.input is removed
   $(this).parent().find('.properties').removeClass('input');
 //the update button returns
-  $('.update').show();
+  $(this).parent().find('.update').show();
 });
 
 //function deletes the referenced id from the db

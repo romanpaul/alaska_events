@@ -16,58 +16,61 @@
 
 <body>
 
-<form action="/" method="POST">
-    <fieldset>
-        <legend>New Event</legend>
+    <form action="/" method="POST">
+        <fieldset>
+            <legend>New Event</legend>
 
-        <div class="form-1">
-            <div>
-                <label for="title">Title</label>
-                <input type="text" id="title" name="title" placeholder="Whale Watching">
-            </div>
-            <div>
-                <label for="date">Date</label>
-                <input type="text" id="date" name="date" placeholder="7/13">
-            </div>
-            <div>
-                <label for="date">Time</label>
-                <input type="text" id="time" name="time" placeholder="9:00am">
-            </div>
-            <div>
-                <label for="price">Price</label>
-                <input type="text" id="price" name="price" placeholder="ex. $150">
-            </div>
-            <div></div>
-                <label for="capacity">Capacity</label>
-                <input type="text" id="capacity" name="capacity" placeholder="ex. 12">
-            </div>
-        </div>
-        <button type="submit">Create Event</button>
+            <div class="form-1">
+                <div>
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" placeholder="Whale Watching">
+                </div>
+                <div>
+                    <label for="date">Date</label>
+                    <input type="text" id="date" name="date" placeholder="7/13">
+                </div>
+                <div>
+                    <label for="date">Time</label>
+                    <input type="text" id="time" name="time" placeholder="9:00am">
+                </div>
+                <div>
+                    <label for="price">Price</label>
+                    <input type="text" id="price" name="price" placeholder="ex. $150">
+                </div>
+                <div></div>
+                    <label for="capacity">Capacity</label>
+                    <input type="text" id="capacity" name="capacity" placeholder="ex. 12">
+                </div>
+             </div><!--/form-1--> 
+            <button type="submit">Create Event</button>
 
-    </fieldset>
-</form>
+        </fieldset>
+    </form>
 
-<ul class="events">
-  <% for(var i=0; i<events.length; i++) {%>
-    <li class="events" id="event-<%=events[i].id%>">
-        <span>Event:</span>
-        <span id="title-<%=events[i].id%>" class="properties"><%= events[i].title %></span>
-        <span>Date:</span>
-        <span id="date-<%=events[i].id%>" class="properties"><%= events[i].date %></span>
-        <span>Time:</span>
-        <span id="time-<%=events[i].id%>" class="properties"><%= events[i].time %></span>
-        <span>Price:</span>
-        <span id="price-<%=events[i].id%>" class="properties"><%= events[i].price %></span>
-        <span>Capacity:</span>
-        <span id="cap-<%=events[i].id %>" class="properties"><%= events[i].capacity %></span>
-        <button class="update">Edit</button>
-        <button class="save" onClick="editEventClick('<%=events[i].id%>')">Save</button>
-        <button class="delete" onClick="deleteEventClick('<%=events[i].id%>')">X</button>
-    </li>
-  <% } %>
-</ul>
+    <div class="container" >
+        <ul class="events">
+            <% for(var i=0; i<events.length; i++) {%>
+                <li class="events" id="event-<%=events[i].id%>">
+                    <span>Event:</span>
+                    <span id="title-<%=events[i].id%>" class="properties"><%= events[i].title %></span>
+                    <span>Date:</span>
+                    <span id="date-<%=events[i].id%>" class="properties"><%= events[i].date %></span>
+                    <span>Time:</span>
+                    <span id="time-<%=events[i].id%>" class="properties"><%= events[i].time %></span>
+                    <span>Price:</span>
+                    <span id="price-<%=events[i].id%>" class="properties"><%= events[i].price %></span>
+                    <span>Capacity:</span>
+                    <span id="cap-<%=events[i].id %>" class="properties"><%= events[i].capacity %></span>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="../js/main.js"></script>
+                    <button class="update">Edit</button>
+                    <button class="save" onClick="editEventClick('<%=events[i].id%>')">Save</button>
+                    <button class="delete" onClick="deleteEventClick('<%=events[i].id%>')">X</button>
+                </li>
+            <% } %>
+        </ul>
+    </div><!--/container-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
 </body>
 </html>
