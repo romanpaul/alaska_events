@@ -14,9 +14,8 @@ router.post('/', (req, res, next) => {
     console.log(req.body)
     Event.create(req.body)
         .then(function(events){
-            res.send(events)
+            res.redirect('/')
         })
-        res.redirect('/')
         .catch(next);
 });
 
