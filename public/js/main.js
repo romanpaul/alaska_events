@@ -24,12 +24,14 @@ $('.save').click(function(){
 
 //function deletes the referenced id from the db
 function deleteEventClick(id) {
-  if (confirm("Are you sure?")) {
+  if (confirm("Are you sure?")) 
+    {
     $.ajax({
       type: 'DELETE',
       url: '/events/' + id,
     })
   }
+  location.reload();
 }
 
 //function edits the fields on the referenced id

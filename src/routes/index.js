@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Event = require('../models/event')
 
-
+//next is used for handling errors on all routes
 router.get('/', (req, res, next) => {
    Event.find({}).then(function(events){
        res.render('index', {events});
@@ -30,10 +30,8 @@ router.put('/events/:id', (req, res, next) => {
 router.delete('/events/:id', (req, res, next) => {
     Event.findByIdAndRemove({_id: req.params.id}).then(function(event){
         console.log("Deleted!")
-        res.redirect('/');
     })
         .catch(next);
-
 });
 
 
