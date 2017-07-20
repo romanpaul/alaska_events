@@ -30,9 +30,8 @@ router.put('/events/:id', (req, res, next) => {
 router.delete('/events/:id', (req, res, next) => {
     Event.findByIdAndRemove({_id: req.params.id}).then(function(event){
         console.log("Deleted!")
-        res.send(event);
+        res.redirect('/');
     })
-        res.redirect('/')
         .catch(next);
 
 });

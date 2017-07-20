@@ -42,27 +42,27 @@
                 <input type="text" id="capacity" name="capacity" placeholder="ex. 12">
             </div>
         </div>
-        <button type="submit" onClick="window.location.reload()">Create Event</button>
+        <button type="submit">Create Event</button>
 
     </fieldset>
 </form>
 
 <ul class="events">
   <% for(var i=0; i<events.length; i++) {%>
-    <li class="events">
+    <li class="events" id="event-<%=events[i].id%>">
         <span>Event:</span>
-        <span id="garbage" class="testing"><%= events[i].title %></span>
+        <span id="title-<%=events[i].id%>" class="properties"><%= events[i].title %></span>
         <span>Date:</span>
-        <span class="testing"><%= events[i].date %></span>
+        <span id="date-<%=events[i].id%>" class="properties"><%= events[i].date %></span>
         <span>Time:</span>
-        <span class="testing"><%= events[i].time %></span>
+        <span id="time-<%=events[i].id%>" class="properties"><%= events[i].time %></span>
         <span>Price:</span>
-        <span class="testing"><%= events[i].price %></span>
+        <span id="price-<%=events[i].id%>" class="properties"><%= events[i].price %></span>
         <span>Capacity:</span>
-        <span class="testing"><%= events[i].capacity %></span>
-        <button id="update">Edit</button>
-        <button id="save" onClick="editEventClick('<%=events[i].id%>')">Save</button>
-        <button id="delete" onClick="deleteEventClick('<%=events[i].id%>')">X</button>
+        <span id="cap-<%=events[i].id %>" class="properties"><%= events[i].capacity %></span>
+        <button class="update">Edit</button>
+        <button class="save" onClick="editEventClick('<%=events[i].id%>')">Save</button>
+        <button class="delete" onClick="deleteEventClick('<%=events[i].id%>')">X</button>
     </li>
   <% } %>
 </ul>

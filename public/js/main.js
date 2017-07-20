@@ -1,15 +1,31 @@
-$('#update').click(function(){
+//when the edit button is clicked
+$('.update').click(function(){
+//the entry fields become editable
+  $(this).parent().find('.properties').attr('contenteditable', 'true');
+//the edit button hides
   $(this).hide();
-  $('.testing').attr('contenteditable', 'true'); 
-  $('#save').show();
+//the save button becomes visible
+  $(this).parent().find('.save').show();
+//.input becomes active for css styling
+  $(this).parent().find('.properties').addClass('input');
 });
 
+/* $('.update').click(function(){
+  $('.properties').addClass('input');
+}); */
+
+//when save is clicked
 $('.save').click(function(){
+//the button hides
   $(this).hide();
-  $('.text').removeAttr('contenteditable');
-  $('.edit').show();
+//content becomes static
+  $('.properties').removeAttr('contenteditable');
+  $(this).parent().find('.properties').removeClass('input');
+//the update button returns
+  $('.update').show();
 });
 
+//function deletes the referenced id from the db
 function deleteEventClick(id) {
   if (confirm("Are you sure?")) {
     $.ajax({
@@ -19,10 +35,20 @@ function deleteEventClick(id) {
   }
 }
 
+//function edits the fields on the referenced id
 function editEventClick(id) {
+  const eventData = {
+  title: $('#title-' + id).text(),
+  time: $('#time-' + id).text(),
+  date: $('#date-' + id).text(),
+  price: $('#price-' + id).text(),
+  capacity: $('#cap-' + id).text(), 
+}; 
   $.ajax({
     type: 'PUT',
-    url: '/events/',
-  })
-  console.log("Edit function", id)
+    url: '/events/' + id,
+    data: JSON.stringify(eventData),
+    dataType: 'json',
+    contentType : 'application/json',
+  });
 }
